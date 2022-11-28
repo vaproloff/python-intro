@@ -4,5 +4,5 @@ import time
 
 start = int(input('Нижний предел: '))
 end = int(input('Верхний предел: '))
-rand_num = int(round((time.time() % 1) * (end - start) + start, 0))
+rand_num = int((time.time() % 1) * (end - start) + start)
 print(f'Случайное число в диапазоне от {start} до {end}: {rand_num}')
