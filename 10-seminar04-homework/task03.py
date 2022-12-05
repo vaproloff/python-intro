@@ -12,11 +12,19 @@
 
 
 # Способ 2. С map, filter
-nums_input = input('Введите список чисел через запятую: ')
-nums = list(map(lambda num: int(num), nums_input.split(',')))
-print(f'Исходный список чисел: {nums}')
+# nums_input = input('Введите список чисел через запятую: ')
+# nums = list(map(lambda num: int(num), nums_input.split(',')))
+# print(f'Исходный список чисел: {nums}')
+#
+# nums_quantities = map(lambda num: (num, nums.count(num)), nums)
+# nums_quantities_unique = filter(lambda num: num[1] == 1, nums_quantities)
+# nums_unique = list(map(lambda num: num[0], nums_quantities_unique))
+# print(f'Список уникальных чисел: {nums_unique}')
 
-nums_quantities = map(lambda num: (num, nums.count(num)), nums)
-nums_quantities_unique = filter(lambda num: num[1] == 1, nums_quantities)
-nums_unique = list(map(lambda num: num[0], nums_quantities_unique))
-print(f'Список уникальных чисел: {nums_unique}')
+# Способ 3.
+nums = input('Введите список чисел через запятую: ').split(',')
+nums_unique = []
+for i in nums:
+    if nums.count(i) == 1:
+        nums_unique.append(i)
+print(f'Список уникальных чисел: {", ".join(nums_unique)}')
